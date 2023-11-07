@@ -8,16 +8,122 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- fountawesome  -->
     <script src="https://kit.fontawesome.com/a121d47811.js" crossorigin="anonymous"></script>
-
+    <!-- style  -->
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <main id="main"></main>
+    <main id="main">
+        <div id="search">
+            <input type="text" class="search form-control" placeholder="search">
+            <button class="btn btn-outline-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div id="menu">
+            <button class="btn btn-sm btn-secondary active" data-menu="home"><i class="fa-solid fa-house"></i> Home</button>
+            <button class="btn btn-sm btn-secondary" data-menu="short"><i class="fa-solid fa-square-rss"></i> Feed</button>
+            <button class="btn btn-sm btn-secondary" data-menu="history"><i class="fa-solid fa-clock-rotate-left"></i> History</button>
+            <button class="btn btn-sm" data-menu="dark-mode"><i class="fa-solid fa-toggle-on"></i> <i class="fa-solid fa-moon"></i></button>
+            <button class="btn btn-sm" data-menu="dark-mode"><i class="fa-solid fa-toggle-off"></i> <i class="fa-solid fa-sun"></i></button>
+        </div>
+        <div id="result">
+            <div class="row flex-center">
+                <div class="col-12 col-sm-8 col-md-7">
+                    <iframe src="" frameborder="0" id="player" class="bg-primary" width="100%"></iframe>
+                    <div class="video-detail">
+                        <h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quis.</h3>
+                        <div class="diskripsi">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, aut quia. Libero non dicta magni rem maiores? Distinctio quos asperiores esse dolorem saepe, labore illum incidunt, consequuntur recusandae, possimus tempore.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <div class="card">
+                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
+                                    <div class="card-body">
+                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <div class="card">
+                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
+                                    <div class="card-body">
+                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#">
+                                <div class="card">
+                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
+                                    <div class="card-body">
+                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-3 col-md-4 gap-1">
+                    <a href="#">
+                        <div class="card aside">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="./thumbnail.webp" alt="">
+                                </div>
+                                <div class="col-6 p-0">
+                                    <p class="no-wrap title">video title</p>
+                                    <p class="no-wrap chanel">Chanel</p>
+                                    <p class="no-wrap viewer">Viewer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="card aside">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="./thumbnail.webp" alt="">
+                                </div>
+                                <div class="col-6 p-0">
+                                    <p class="no-wrap title">video title</p>
+                                    <p class="no-wrap chanel">Chanel</p>
+                                    <p class="no-wrap viewer">Viewer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="card aside">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="./thumbnail.webp" alt="">
+                                </div>
+                                <div class="col-6 p-0">
+                                    <p class="no-wrap title">video title</p>
+                                    <p class="no-wrap chanel">Chanel</p>
+                                    <p class="no-wrap viewer">Viewer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- jquery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- bootstrap  -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
+    <!-- main  -->
+    <script src="./js/main.js"></script>
+    <script>
+        load();
+    </script>
 </body>
 </html>

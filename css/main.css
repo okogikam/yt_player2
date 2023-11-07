@@ -1,0 +1,56 @@
+:root{
+    --bg-clr: #fff;
+    --txt-clr: #030303;
+    --bs-primary: #0d6efd;
+}
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+}
+p{
+    margin: 0px;
+}
+.flex-center{
+    justify-content: center;
+}
+#search,#menu{
+    text-align: center;
+    padding: 5px;
+}
+#search input{
+    display: inline;
+    width: 80%;
+    max-width: 600px;
+}
+button.active{
+    background-color: var(--bs-primary) !important;
+}
+#result img{
+    max-width: 100%;
+}
+.card{
+    overflow: hidden;
+}
+.no-wrap{
+    white-space: nowrap;
+}
+.aside .title{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.aside .chanel, .aside .viewer{
+    font-size: .8rem;
+    font-weight: 300;
+}
+.card.aside{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+a{
+    text-decoration: none;
+}
+/* #result div{
+    min-height: 300px;
+} */
