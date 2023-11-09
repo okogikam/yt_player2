@@ -9,6 +9,9 @@
     margin: 0px;
     text-decoration: none;
 }
+iframe{
+    width: 100%;
+}
 p{
     margin: 0px;
 }

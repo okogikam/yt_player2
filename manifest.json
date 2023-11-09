@@ -1,0 +1,28 @@
+{
+  "short_name": "YT",
+  "name": "Youtube Search-v1",
+  "version":"1.0",
+  "icons": [
+    {
+      "src": "./img/YT Search_sm.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "./img/YT Search_md.png",
+      "type": "image/png",
+      "sizes": "400x400",
+      "purpose": "any"
+    }
+  ],
+  "background":{
+      "script": ["./js/PlaylistVideo.js","./js/Ytvideo.js","./js/yt_api.js"]
+  },
+  "start_url": "./index.html",
+  "background_color": "#e4e2dd",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#e4e2dd",
+  "crossorigin": "use-credetials"
+}
