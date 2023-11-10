@@ -25,7 +25,7 @@ class Player{
         });
     }
 
-    video(videoId){
+    playVideo(videoId){
         this.ytIframe.loadVideoById(videoId);
         this.isPlaying = true;
         
@@ -77,6 +77,11 @@ class Player{
         })
     }
     init(config){
+        let a = document.getElementById("videoPlaying");
+        let b = document.getElementById("videoLists");
+        a.classList.remove("d-none");      
+        b.setAttribute("class","col-4");
+        //console.log(config);
         this[config.type](config.videoId);
         // this.startLoop()
     }

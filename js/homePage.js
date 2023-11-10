@@ -1,0 +1,56 @@
+class homePage{
+    constructor(conf){
+        this.url = conf.url;
+        this.element = conf.element;
+        this.player = conf.player;
+        this.Ytvideo = conf.Ytvideo;
+    }
+    videos(data){
+        let videoList = this.element.querySelector("#videoList");
+        videoList.innerHTML = "";
+        data.forEach(vid => {
+            let btn = document.createElement("div");
+            btn.setAttribute("class","col-12 col-sm-6 col-md-4");
+            btn.innerHTML = `
+            <div class="card">
+                <div class="card-header p-0 m-0">
+                    <img src="${vid.thumbnail.thumbnails[0].url}" alt="">
+                </div>
+                <div class="card-body">
+                    <p class="title">${vid.title.runs[0].text}</p>
+                    <p class="channel">
+                    <img src="${vid.channelThumbnailSupportedRenderers.channelThumbnailWithLinkRenderer.thumbnail.thumbnails[0].url}" width="30" height="30">
+                    ${vid.ownerText.runs[0].text}</p>
+                    <p class="durasi">${vid.lengthText.simpleText}</p>
+                </div>
+            </div>`;
+            videoList.appendChild(btn);
+            btn.addEventListener("click",()=>{
+                videoList.innerHTML = "";
+                this.player.init({
+                    type: "playVideo",
+                    videoId: vid.videoId
+                })
+                this.Ytvideo.displayViewPage(vid.videoId);
+            })   
+        });     
+    }
+    Shorts(){
+
+    }
+    Trending(){
+
+    }
+    async display(){
+        let a = document.getElementById("videoPlaying");
+        let b = document.getElementById("videoLists");
+        a.classList.add("d-none");      
+        b.setAttribute("class","col-auto");
+        let data = await fetch(`${this.url}?type=homepage`);
+        let dataJson = await data.json();
+        Object.keys(dataJson).forEach(key=>{
+            this[`${key}`](dataJson[key]);
+        })
+        // console.log(this.player)
+    }
+}

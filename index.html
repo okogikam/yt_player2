@@ -18,69 +18,19 @@
             <button class="btn btn-outline-primary cari-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div id="menu">
-            <button class="btn btn-sm btn-menu btn-secondary active" data-menu="search"><i class="fa-solid fa-house"></i> Home</button>
-            <button class="btn btn-sm btn-menu btn-secondary" data-menu="search"><i class="fa-solid fa-square-rss"></i> Feed</button>
+            <button class="btn btn-sm btn-menu btn-secondary active" data-menu="displayHomePage"><i class="fa-solid fa-house"></i> Home</button>
             <button class="btn btn-sm btn-menu btn-secondary" data-menu="history"><i class="fa-solid fa-clock-rotate-left"></i> History</button>
             <button class="btn btn-sm btn-menu" data-menu="dark-mode"><i class="fa-solid fa-toggle-on"></i> <i class="fa-solid fa-moon"></i></button>
         </div>
         <div id="result">
             <div class="row flex-center">
-                <div class="col-12 col-sm-8 col-md-7">
+                <div id="videoPlaying" class="d-none col-12 col-sm-8 col-md-7">
                     <div id="video-player"></div>
                     <div class="video-detail">
-                        <h3 class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, quis.</h3>
-                        <div class="diskripsi">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, aut quia. Libero non dicta magni rem maiores? Distinctio quos asperiores esse dolorem saepe, labore illum incidunt, consequuntur recusandae, possimus tempore.</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <a href="#">
-                                <div class="card">
-                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
-                                    <div class="card-body">
-                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#">
-                                <div class="card">
-                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
-                                    <div class="card-body">
-                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="#">
-                                <div class="card">
-                                    <img src="./thumbnail.webp" alt="" class="thumbnail">
-                                    <div class="card-body">
-                                        <p class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aut?</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
                     </div>
                 </div>
-                <div class="d-none col-12 col-sm-3 col-md-4 gap-1">
-                    <a href="#">
-                        <div class="card aside">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="./thumbnail.webp" alt="">
-                                </div>
-                                <div class="col-6 p-0">
-                                    <p class="no-wrap title">video title</p>
-                                    <p class="no-wrap chanel">Chanel</p>
-                                    <p class="no-wrap viewer">Viewer</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div id="videoLists" class="col-auto">
+                    <div id="videoList" class="row"></div>
                 </div>
             </div>
         </div>
@@ -96,9 +46,11 @@
     <!-- yt_search  -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/PlaylistVideo.js"></script>
-    <script src="./js/Ytvideo.js"></script>
     <script src="./js/player.js"></script>
     <script src="./js/downloadVideo.js"></script>
+    <script src="./js/homePage.js"></script>
+    <script src="./js/viewPage.js"></script>
+    <script src="./js/Ytvideo.js"></script>
     <script src="./js/yt_api.js"></script>
 </body>
 </html>

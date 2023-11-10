@@ -10,14 +10,12 @@ let player = new Player({
     origin: domain,
 })
 
-
 const Ytsearch = new Ytvideo({
-    element: document.querySelector("body"),    
+    element: document.querySelector("main"),    
     playlist: Playlist,
     history: historyVideo,
-    url: "http://localhost/yt_player2/api.php?",
+    url: "https://api.hancau.net/",
 })
-
 
 window.addEventListener("load", async () => {
     if ("serviceWorker" in navigator) {
@@ -25,10 +23,9 @@ window.addEventListener("load", async () => {
     }
 
     player.makeElement();
+
     Ytsearch.setPlayer(player);
-    let h = await fetch(`https://api.hancau.net/?type=viewpage&id=pL5kYXaDo-A`);
-    let h_i = await h.json();
-    console.log(h_i)
+    Ytsearch.displayHomePage();
 });
 
 

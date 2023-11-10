@@ -35,6 +35,7 @@ button.active{
 }
 .card{
     overflow: hidden;
+    cursor: pointer;
 }
 .no-wrap{
     white-space: nowrap;
@@ -43,9 +44,14 @@ button.active{
     font-size: 1.2rem;
     font-weight: 500;
 }
-.aside .chanel, .aside .viewer{
+.aside .channel, .aside .viewer{
     font-size: .8rem;
     font-weight: 300;
+}
+.aside .channel img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
 .card.aside{
     margin-top: 3px;
