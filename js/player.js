@@ -80,7 +80,7 @@ class Player{
         let a = document.getElementById("videoPlaying");
         let b = document.getElementById("videoLists");
         a.classList.remove("d-none");      
-        b.setAttribute("class","col-4");
+        b.setAttribute("class","col-sm-4");
         //console.log(config);
         this[config.type](config.videoId);
         // this.startLoop()
