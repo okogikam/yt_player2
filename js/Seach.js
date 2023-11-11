@@ -19,7 +19,7 @@ class Search{
                     const btn = document.createElement("button");
                     btn.classList.add('btn-video');
                     btn.innerHTML = `
-                    <div class="card" title="${vid.title.runs[0].text}">
+                    <div class="card" title="${v.snippet.channelTitle}">
                         <div class="card-header p-0 m-0">
                             <img src="${v.snippet.thumbnails.medium.url}" alt="">
                         </div>
