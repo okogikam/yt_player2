@@ -54,7 +54,7 @@ class Ytvideo{
                 
             }else{
                 const playerVideo = this.element.querySelector("#videoPlaying");
-                playerVideo.classList.add("d-none");
+                // playerVideo.classList.add("d-none");
             }
         }
                 
