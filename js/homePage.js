@@ -79,6 +79,8 @@ class homePage{
         videoList.appendChild(daftarVideo);
     }
     async display(){
+        let videoList = this.element.querySelector("#videoList");
+        videoList.innerHTML = "";
         let a = document.getElementById("videoPlaying");
         let b = document.getElementById("videoLists");
         a.classList.add("d-none");      
