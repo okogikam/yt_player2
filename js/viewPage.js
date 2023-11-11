@@ -10,17 +10,18 @@ class viewPage{
             let btn = document.createElement("div");
             btn.setAttribute("class","col-12");
             btn.innerHTML = `
-            <div class="card aside" title="${vid.title.simpleText}">
+            <div class="card aside m-2" title="${vid.title.simpleText}">
               <div class="row">
                 <div class="col-4 p-0 m-0">
                     <img src="${vid.thumbnail.thumbnails[0].url}" alt="">
-                </div>
-                <div class="col-8">
+                    </div>
+                    <div class="col-8">
                     <p class="no-wrap title">${vid.title.simpleText}</p>
                     <p class="channel">
                     <img src="${vid.channelThumbnail.thumbnails[0].url}">
-                    ${vid.longBylineText.runs[0].text}</p>
-                    <p class="durasi">${vid.lengthText.simpleText}</p>
+                    ${vid.longBylineText.runs[0].text}
+                    <span class="durasi">${vid.lengthText.simpleText}</span>
+                    </p>
                 </div>
               </div>
             </div>`;

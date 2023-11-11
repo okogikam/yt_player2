@@ -25,6 +25,15 @@ class Ytvideo{
         });
         this.starLoop();
     }
+    search(conf){
+        if(conf.q != ''){
+            this.searchData = new Search({
+                Ytvideo: this,
+                s: conf
+            });
+            this.searchData.display();
+        }
+    }
     
     //memulai looping untuk mengecek status video 0 jika sudah selesai
     starLoop(){

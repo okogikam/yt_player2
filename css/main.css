@@ -9,6 +9,9 @@
     margin: 0px;
     text-decoration: none;
 }
+main{
+    overflow-x: hidden;
+}
 iframe{
     width: 100%;
 }
@@ -41,17 +44,28 @@ button.active{
     white-space: nowrap;
 }
 .aside .title{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
 }
-.aside .channel, .aside .viewer{
+.aside .channel, .aside .durasi{
     font-size: .8rem;
     font-weight: 300;
 }
 .aside .channel img{
     width: 30px;
     height: 30px;
+}
+.channel img{
     border-radius: 50%;
+}
+.durasi{
+    float: right;
+}
+.aside .durasi{
+    float: unset;
+    position: absolute;
+    right: 3px;
+    bottom: 0;
 }
 .card.aside{
     margin-top: 3px;

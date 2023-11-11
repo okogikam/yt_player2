@@ -1,6 +1,6 @@
 {
-  "short_name": "YT",
-  "name": "Youtube Search-v1",
+  "short_name": "YT-kw",
+  "name": "Youtube KW-v1",
   "version":"1.0",
   "icons": [
     {
@@ -16,13 +16,10 @@
       "purpose": "any"
     }
   ],
-  "background":{
-      "script": ["./js/PlaylistVideo.js","./js/Ytvideo.js","./js/yt_api.js"]
-  },
   "start_url": "./index.html",
-  "background_color": "#e4e2dd",
+  "background_color": "#0d6efd",
   "display": "standalone",
   "scope": "./",
-  "theme_color": "#e4e2dd",
+  "theme_color": "#0d6efd",
   "crossorigin": "use-credetials"
 }

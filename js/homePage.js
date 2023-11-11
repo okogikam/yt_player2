@@ -10,18 +10,20 @@ class homePage{
         videoList.innerHTML = "";
         data.forEach(vid => {
             let btn = document.createElement("div");
+            let durasi = vid.lengthText.simpleText? vid.lengthText.simpleText: "";
             btn.setAttribute("class","col-12 col-sm-6 col-md-4");
             btn.innerHTML = `
-            <div class="card">
+            <div class="card m-2" title="${vid.title.runs[0].text}">
                 <div class="card-header p-0 m-0">
                     <img src="${vid.thumbnail.thumbnails[0].url}" alt="">
                 </div>
                 <div class="card-body">
-                    <p class="title">${vid.title.runs[0].text}</p>
+                    <p class="title">${vid.title.runs[0].text.slice(0,30)}</p>
                     <p class="channel">
                     <img src="${vid.channelThumbnailSupportedRenderers.channelThumbnailWithLinkRenderer.thumbnail.thumbnails[0].url}" width="30" height="30">
-                    ${vid.ownerText.runs[0].text}</p>
-                    <p class="durasi">${vid.lengthText.simpleText}</p>
+                    ${vid.ownerText.runs[0].text}
+                    <span class="durasi">${durasi}</span>
+                    </p>
                 </div>
             </div>`;
             videoList.appendChild(btn);

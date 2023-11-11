@@ -74,7 +74,7 @@ searchBtn.addEventListener("click",()=>{
         type: type,
         maxResults: "50"
     });
-    btnMenu[0].click()
+    //btnMenu[0].click()
 })
 
 searchInput.addEventListener("keydown",(event)=>{   
@@ -91,7 +91,7 @@ searchInput.addEventListener("keydown",(event)=>{
             type: type,
             maxResults: "50"
         });
-        btnMenu[0].click()
+        //btnMenu[0].click()
     }
 })
 
