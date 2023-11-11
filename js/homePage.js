@@ -7,12 +7,12 @@ class homePage{
     }
     videos(data){
         let videoList = this.element.querySelector("#videoList");
-        let daftarVideo = document.createElement("div");
-        daftarVideo.classList.add("row");
-        daftarVideo.innerHTML = "<h3>Video</h3>";
+        let daftarVideos = document.createElement("div");
+        daftarVideos.classList.add("row");
+        daftarVideos.innerHTML = "<h3>Video</h3>";
         data.forEach(vid => {
             let btn = document.createElement("div");
-            let durasi = vid.lengthText.simpleText? vid.lengthText.simpleText: "";
+            let durasi = "";
             btn.setAttribute("class","col-12 col-sm-6 col-md-4");
             btn.innerHTML = `
             <div class="card m-2" title="${vid.title.runs[0].text}">
@@ -28,7 +28,7 @@ class homePage{
                     </p>
                 </div>
             </div>`;
-            daftarVideo.appendChild(btn);
+            daftarVideos.appendChild(btn);
             btn.addEventListener("click",()=>{
                 videoList.innerHTML = "";
                 this.player.init({
@@ -38,7 +38,7 @@ class homePage{
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   
         }); 
-        videoList.appendChild(daftarVideo);    
+        videoList.appendChild(daftarVideos);    
     }
     Shorts(){
 
@@ -50,7 +50,7 @@ class homePage{
         daftarVideo.innerHTML = "<h3>Trending</h3>";
         data.forEach(vid => {
             let btn = document.createElement("div");
-            let durasi = vid.lengthText.simpleText? vid.lengthText.simpleText: "";
+            let durasi = "";
             btn.setAttribute("class","col-12 col-sm-6 col-md-4");
             btn.innerHTML = `
             <div class="card m-2" title="${vid.title.runs[0].text}">
@@ -86,11 +86,12 @@ class homePage{
         let data = await fetch(`${this.url}?type=homepage`);
         let dataJson = await data.json();
         this.Trending(dataJson.Trending);
+
         this.videos(dataJson.videos);
 
         // Object.keys(dataJson).forEach(key=>{
         //     this[`${key}`](dataJson[key]);
         // })
-        // console.log(this.player)
+        console.log(dataJson.videos)
     }
 }
