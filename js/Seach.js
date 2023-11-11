@@ -16,10 +16,10 @@ class Search{
             Object.values(d).forEach(v=>{
                 console.log(v.kind)
                 if(v.kind === "youtube#searchResult"){
-                    const btn = document.createElement("button");
-                    btn.classList.add('btn-video');
+                    const btn = document.createElement("div");
+                    btn.setAttribute("class","col-12 col-sm-6 col-md-4");
                     btn.innerHTML = `
-                    <div class="card" title="${v.snippet.channelTitle}">
+                    <div class="card m-2" title="${v.snippet.channelTitle}">
                         <div class="card-header p-0 m-0">
                             <img src="${v.snippet.thumbnails.medium.url}" alt="">
                         </div>
