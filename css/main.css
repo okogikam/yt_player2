@@ -96,3 +96,13 @@ a{
 /* #result div{
     min-height: 300px;
 } */
+
+#menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    /* background-color: blue; */
+    z-index: 9999;
+}

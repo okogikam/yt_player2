@@ -38,7 +38,7 @@ class viewPage{
                   thumbnail: vid.thumbnail.thumbnails[0].url,
                   channel: vid.longBylineText.runs[0].text
                 })
-
+                
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   
         });  
