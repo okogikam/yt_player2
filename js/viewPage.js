@@ -26,8 +26,10 @@ class viewPage{
               </div>
             </div>`;
             videoList.appendChild(btn);
-            btn.addEventListener("click",()=>{
+            btn.querySelector(".card").addEventListener("click",()=>{
                 videoList.innerHTML = "";
+                let detail = this.Ytvideo.element.querySelector(".video-detail");
+                detail.innerHTML = ``;
                 this.Ytvideo.player.init({
                     type: "playVideo",
                     videoId: vid.videoId? vid.videoId : vid.playlistId
@@ -69,6 +71,8 @@ class viewPage{
     async display(){
         let data = await fetch(`${this.Ytvideo.url}?type=viewpage&v=${this.idVideo}`);
         let dataJson = await data.json();
+        let c = this.Ytvideo.element.querySelector("#videoList");
+        c.innerHTML = "";
         this.videos(dataJson.videos);
         this.next_video(dataJson.next_video);        
     }

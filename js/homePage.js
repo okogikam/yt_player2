@@ -29,7 +29,7 @@ class homePage{
                 </div>
             </div>`;
             daftarVideos.appendChild(btn);
-            btn.addEventListener("click",()=>{
+            btn.querySelector(".card").addEventListener("click",()=>{
                 videoList.innerHTML = "";
                 this.player.init({
                     type: "playVideo",
@@ -73,7 +73,7 @@ class homePage{
                 </div>
             </div>`;
             daftarVideo.appendChild(btn);
-            btn.addEventListener("click",()=>{
+            btn.querySelector(".card").addEventListener("click",()=>{
                 videoList.innerHTML = "";
                 this.player.init({
                     type: "playVideo",
@@ -91,16 +91,16 @@ class homePage{
         videoList.appendChild(daftarVideo);
     }
     async display(){
-        let videoList = this.element.querySelector("#videoList");
-        videoList.innerHTML = "";
+        this.Ytvideo.loadingView();
         let a = document.getElementById("videoPlaying");
         let b = document.getElementById("videoLists");
         a.classList.add("d-none");      
         b.setAttribute("class","col-auto");
         let data = await fetch(`${this.url}?type=homepage`);
         let dataJson = await data.json();
+        let c = this.Ytvideo.element.querySelector("#videoList");
+        c.innerHTML = "";
         this.Trending(dataJson.Trending);
-
         this.videos(dataJson.videos);
 
         // Object.keys(dataJson).forEach(key=>{

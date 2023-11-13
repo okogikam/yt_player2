@@ -25,7 +25,7 @@ window.addEventListener("load", async () => {
     player.makeElement();
 
     Ytsearch.setPlayer(player);
-    Ytsearch.displayHomePage();
+    Ytsearch.display("displayHomePage");
 });
 
 
@@ -33,11 +33,7 @@ btnMenu.forEach((btn,i)=>{
     btn.addEventListener("click",()=>{
         if(btn.dataset.menu === "dark-mode" || btn.dataset.menu === "white-mode"){
             changeMode(btn);
-        }else{
-            btnMenu.forEach((b)=>{
-                b.classList.remove("active");
-            })
-            btnMenu[i].classList.add("active");
+        }else{            
             menubtn(btn.dataset.menu)
         }
     })
@@ -50,14 +46,14 @@ function changeMode(btn){
     if(btn.dataset.menu === "dark-mode"){
         body.dataset.bsTheme = "dark";
         btn.innerHTML = `
-        <i class="fa-solid fa-toggle-off"></i> <i class="fa-solid fa-sun"></i>`;
+        <i class="fa-solid fa-sun"></i>`;
         btn.dataset.menu = "white-mode";
         return
     }
     if(btn.dataset.menu === "white-mode"){
         body.dataset.bsTheme = "white";
         btn.innerHTML = `
-        <i class="fa-solid fa-toggle-on"></i> <i class="fa-solid fa-moon"></i>`;
+       <i class="fa-solid fa-moon"></i>`;
         btn.dataset.menu = "dark-mode";
         return
     }

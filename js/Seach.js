@@ -19,7 +19,7 @@ class Search{
                     const btn = document.createElement("div");
                     btn.setAttribute("class","col-12 col-sm-6 col-md-4");
                     btn.innerHTML = `
-                    <div class="card m-2" title="${v.snippet.channelTitle}">
+                    <div class="card m-2" title="${v.snippet.title}">
                         <div class="card-header p-0 m-0">
                             <img src="${v.snippet.thumbnails.medium.url}" alt="">
                         </div>
@@ -30,11 +30,17 @@ class Search{
                             </p>
                         </div>
                     </div>`;
-                    btn.addEventListener("click",()=>{
+                    btn.querySelector(".card").addEventListener("click",()=>{
                         el.innerHTML = "";
                         this.Ytvideo.player.init({
                             type: "playVideo",
                             videoId: v.id.videoId
+                        })
+                        this.Ytvideo.saveHistory({
+                            videoId: v.id.videoId,
+                            thumbnail:v.snippet.thumbnails.medium.url,
+                            channel: v.snippet.channelTitle,
+                            title: v.snippet.title
                         })
                         this.Ytvideo.displayViewPage(v.id.videoId);
                     }) 

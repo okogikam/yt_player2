@@ -34,6 +34,9 @@ p{
 button.active{
     background-color: var(--bs-primary) !important;
 }
+#result{
+    margin-bottom: 60px;
+}
 #result img{
     max-width: 100%;
 }
@@ -87,6 +90,15 @@ a{
 .diskripsi{
     text-align: justify;
 }
+
+.loading{
+width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
 @media only screen and (max-width: 600px){
     .diskripsi{
         max-height: 150px;
@@ -105,4 +117,48 @@ a{
     padding: 5px;
     /* background-color: blue; */
     z-index: 9999;
+    border-top: 1px solid #6c757d;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 40px;
+    color: #212529 !important;
+    background-color: #fff;
+}
+.btn-menu{
+    border: 1px solid #1a1d20;
+    width: 50px;
+}
+.btn-menu:hover, .btn-menu:active{
+    border: 1px solid #1a1d20;
+}
+.btn-menu[data-menu="displayHomePage"]{
+    height: 50px;
+    margin: 0px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.btn-menu[data-menu="displayHistory"]{
+    text-align: right;
+}
+.btn-menu[data-menu="dark-mode"],
+.btn-menu[data-menu="white-mode"]{
+    text-align: left;
+}
+body[data-bs-theme="dark"] #menu,
+body[data-bs-theme="dark"] .btn-menu[data-menu="displayHomePage"]{
+  background-color: #1a1d20;
+  color: #fff;
+}
+
+body[data-bs-theme="dark"] .btn-menu{
+    border: 1px solid #fff;
+}
+body[data-bs-theme="dark"] .btn-menu:hover,
+body[data-bs-theme="dark"] .btn-menu:active{
+    color: #fff;
 }

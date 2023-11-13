@@ -75,7 +75,15 @@ class Ytvideo{
         this.saveHistory();
         this.display("history")
     }
+    loadingView(){
+        let videoList = this.element.querySelector("#videoList");
+        videoList.innerHTML = `
+        <div class="loading">
+        <p><i class="fa-solid fa-photo-film fa-bounce"></i> Loading..</p>
+        </div>`; 
+    }
     display(type){
+        this.loadingView();
         this[type]();
     }
     displayHistory(){
@@ -95,6 +103,7 @@ class Ytvideo{
         this.homePage.display();
     }
     displayViewPage(idVideo){
+        this.loadingView();
         this.viewPage = new viewPage({
             Ytvideo: this,
             idVideo: idVideo
