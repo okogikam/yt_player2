@@ -35,6 +35,12 @@ class homePage{
                     type: "playVideo",
                     videoId: vid.videoId
                 })
+                this.Ytvideo.saveHistory({
+                    videoId: vid.videoId,
+                    title: vid.title.runs[0].text,
+                    thumbnail: vid.thumbnail.thumbnails[0].url,
+                    channel: vid.ownerText.runs[0].text
+                })
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   
         }); 
@@ -72,6 +78,12 @@ class homePage{
                 this.player.init({
                     type: "playVideo",
                     videoId: vid.videoId
+                })
+                this.Ytvideo.saveHistory({
+                    videoId: vid.videoId,
+                    title: vid.title.runs[0].text,
+                    thumbnail: vid.thumbnail.thumbnails[0].url,
+                    channel: vid.ownerText.runs[0].text
                 })
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   

@@ -63,8 +63,10 @@ class Ytvideo{
         })
     }    
     //menyimpan history ke localhost
-    saveHistory(){
+    saveHistory(conf){
+        this.history.push(conf);
         localStorage.setItem("history",JSON.stringify(this.history));
+        console.log(this.history)
     }
     
     //menghapus history ke localhost
@@ -76,12 +78,17 @@ class Ytvideo{
     display(type){
         this[type]();
     }
-    history(){
-
+    displayHistory(){
+        this.daftarHistory = new History({
+            Ytvideo: this,            
+        })
+        this.daftarHistory.display();
     }
     //homepage
     displayHomePage(){
-        this.player.stopVideo();
+        if(this.player.playerState === 1){
+            this.player.stopVideo();
+        }
         this.homePage.display();
     }
     displayViewPage(idVideo){

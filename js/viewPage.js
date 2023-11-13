@@ -30,8 +30,15 @@ class viewPage{
                 videoList.innerHTML = "";
                 this.Ytvideo.player.init({
                     type: "playVideo",
-                    videoId: vid.videoId? vid.videoId : vid.plailistId
+                    videoId: vid.videoId? vid.videoId : vid.playlistId
                 })
+                this.Ytvideo.saveHistory({
+                  videoId: vid.videoId,
+                  title: vid.title.simpleText,
+                  thumbnail: vid.thumbnail.thumbnails[0].url,
+                  channel: vid.longBylineText.runs[0].text
+                })
+
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   
         });  
@@ -50,7 +57,6 @@ class viewPage{
                </div>
                <div class="col-6 text-right">
                <p>${data.dateText[0].simpleText}</p>
-               <p>${data.viewCount[0].videoViewCountRenderer.shortViewCount.simpleText}</p>
                </div>
              </div>
           </div>
