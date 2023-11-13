@@ -79,6 +79,9 @@ class Ytvideo{
         this[type]();
     }
     displayHistory(){
+        if(this.player.playerState === 1){
+            this.player.stopVideo();
+        }
         this.daftarHistory = new History({
             Ytvideo: this,            
         })
