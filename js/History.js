@@ -34,6 +34,7 @@ class History{
                     type: "playVideo",
                     videoId: h.videoId
                 })
+                this.Ytvideo.displayViewPage(h.videoId);
             })
         });
     }
