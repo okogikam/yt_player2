@@ -19,8 +19,8 @@ class viewPage{
                     <p class="no-wrap title">${vid.title.simpleText}</p>
                     <p class="channel">
                     <img src="${vid.channelThumbnail.thumbnails[0].url}">
-                    ${vid.longBylineText.runs[0].text}
-                    <span class="durasi">${vid.lengthText.simpleText}</span>
+                    ${vid.longBylineText.runs[0].text.slice(0,15)}
+                    <span class="durasi"></span>
                     </p>
                 </div>
               </div>
@@ -30,18 +30,40 @@ class viewPage{
                 videoList.innerHTML = "";
                 this.Ytvideo.player.init({
                     type: "playVideo",
-                    videoId: vid.videoId
+                    videoId: vid.videoId? vid.videoId : vid.plailistId
                 })
                 this.Ytvideo.displayViewPage(vid.videoId);
             })   
         });  
     }
-    videos(data){}
+    videos(data){
+        if(!data){return}
+        let detail = this.Ytvideo.element.querySelector(".video-detail");
+        detail.innerHTML = `
+        <div class="card p-2 mb-3">
+          <h3 class="title">${data.title[0].runs[0].text}</h3>
+          <div class="channel-info mt-2 mb-2">
+             <div class="row">
+               <div class="col-6">
+                 <img src="${data.owner[0].videoOwnerRenderer.thumbnail.thumbnails[0].url}" >
+                 <span>@${data.owner[0].videoOwnerRenderer.title.runs[0].text}</span>
+               </div>
+               <div class="col-6 text-right">
+               <p>${data.dateText[0].simpleText}</p>
+               <p>${data.viewCount[0].videoViewCountRenderer.shortViewCount.simpleText}</p>
+               </div>
+             </div>
+          </div>
+          <div class="diskripsi text-justify">
+            <p>${data.attributedDescription[0].content}</p>
+          </div>
+        </div>
+        `
+    }
     async display(){
         let data = await fetch(`${this.Ytvideo.url}?type=viewpage&v=${this.idVideo}`);
         let dataJson = await data.json();
-        Object.keys(dataJson).forEach(key=>{
-            this[`${key}`](dataJson[key]);
-        })        
+        this.videos(dataJson.videos);
+        this.next_video(dataJson.next_video);        
     }
 }

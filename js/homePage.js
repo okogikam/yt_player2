@@ -94,6 +94,5 @@ class homePage{
         // Object.keys(dataJson).forEach(key=>{
         //     this[`${key}`](dataJson[key]);
         // })
-        console.log(dataJson.videos)
     }
 }

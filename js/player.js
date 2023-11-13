@@ -44,6 +44,9 @@ class Player{
         }       
         
     }
+    stopVideo(){
+        this.ytIframe.stopVideo();
+    }
     ready(){
         this.playerReady = true;
     }

@@ -81,6 +81,7 @@ class Ytvideo{
     }
     //homepage
     displayHomePage(){
+        this.player.stopVideo();
         this.homePage.display();
     }
     displayViewPage(idVideo){

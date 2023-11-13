@@ -74,6 +74,21 @@ button.active{
 a{
     text-decoration: none;
 }
+.text-right{
+ text-align: right !important;
+}
+.text-justify{
+    text-align: justify !important;
+}
+.diskripsi{
+    text-align: justify;
+}
+@media only screen and (max-width: 600px){
+    .diskripsi{
+        max-height: 150px;
+        overflow: auto;
+    }
+}
 /* #result div{
     min-height: 300px;
 } */
