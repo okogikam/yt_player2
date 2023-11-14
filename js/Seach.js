@@ -53,6 +53,10 @@ class Search{
 
     }
     display(){
+        let a = document.getElementById("videoPlaying");
+        let b = document.getElementById("videoLists");
+        a.classList.add("d-none");      
+        b.setAttribute("class","col-auto");
         this[this.type]();
     }
 }
