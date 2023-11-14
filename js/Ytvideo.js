@@ -73,7 +73,7 @@ class Ytvideo{
     removeHistory(){
         this.history = [];
         this.display("displayHistory")
-        this.saveHistory();
+        localStorage.removeItem("history")
     }
     loadingView(){
         let videoList = this.element.querySelector("#videoList");
