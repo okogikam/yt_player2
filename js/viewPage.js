@@ -35,7 +35,7 @@ class viewPage{
                     videoId: vid.videoId? vid.videoId : vid.playlistId
                 })
                 this.Ytvideo.saveHistory({
-                  videoId: vid.videoId,
+                  videoId: vid.videoId? vid.videoId : vid.playlistId,
                   title: vid.title.simpleText,
                   thumbnail: vid.thumbnail.thumbnails[0].url,
                   channel: vid.longBylineText.runs[0].text
