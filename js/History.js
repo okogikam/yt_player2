@@ -11,6 +11,10 @@ class History{
         b.setAttribute("class","col-auto");
         let videoList = this.Ytvideo.element.querySelector("#videoList");
         videoList.innerHTML = "<h3>History <buttton class='btn btn-sm clear-history'><i class='fa-regular fa-trash-can'></i></button></h3>";
+        videoList.querySelector(".clear-history").addEventListener("click",()=>{
+            this.Ytvideo.removeHistory();
+            console.log(this.Ytvideo.history)
+        })
         history.forEach(h => {
             if(h != null){
                
@@ -37,11 +41,7 @@ class History{
                         videoId: h.videoId
                     })
                     this.Ytvideo.displayViewPage(h.videoId);
-                })
-                videoList.querySelector(".clear-history").addEventListener("click",()=>{
-                    this.Ytvideo.removeHistory();
-                    console.log(this.Ytvideo.history)
-                })
+                })                
             }
         });
     }
