@@ -1,175 +1,64 @@
-:root{
-    --bg-clr: #fff;
-    --txt-clr: #030303;
-    --bs-primary: #0d6efd;
-}
 *{
     box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-    text-decoration: none;
 }
-main{
-    overflow-x: hidden;
+nav#menu{
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ right: 0; 
+ color: #EEEEEE;
+ background: #242424;
+ box-shadow: 0px -1px 0px 0px #666;
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
 }
-iframe{
-    width: 100%;
-    position: sticky;
+nav#menu a{
+    display: flex;
+    flex-flow: column;
 }
-p{
-    margin: 0px;
+nav#menu span{
+    font-size: 0.6rem;
 }
-.flex-center{
-    justify-content: center;
-}
-#search,#menu{
-    text-align: center;
-    padding: 5px;
+nav#menu i{
+    font-size: 0.8rem;
 }
 #search{
     position: fixed;
-    top:0;
-    left: 0px;
-    right: 0px;
-    z-index: 999;
-    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0; 
+    color: #EEEEEE;
+    background: #242424;
+    box-shadow: 0px 1px 0px 0px #666;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+    z-index: 9999;
 }
 #search input{
-    display: inline;
-    width: 80%;
-    max-width: 600px;
+    border-radius: 5px;
+    border: none;
 }
-button.active{
-    background-color: var(--bs-primary) !important;
+#main{
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
-#result{
-    margin-top: 50px;
-    margin-bottom: 90px;
-}
-#result img{
-    max-width: 100%;
-}
-.card{
-    overflow: hidden;
-    cursor: pointer;
-}
-.card-header img{
-    width: 100%;
-}
-.no-wrap{
-    white-space: nowrap;
-}
-.aside .title{
-    font-size: 1rem;
-    font-weight: 500;
-}
-.aside .channel, .aside .durasi{
-    font-size: .8rem;
-    font-weight: 300;
-}
-.aside .channel img{
-    width: 30px;
-    height: 30px;
-}
-.channel img{
-    border-radius: 50%;
-}
-.durasi{
-    float: right;
-}
-.aside .durasi{
-    float: unset;
-    position: absolute;
-    right: 3px;
-    bottom: 0;
-}
-.card.aside{
-    margin-top: 3px;
-    margin-bottom: 3px;
-}
-a{
-    text-decoration: none;
-}
-.text-right{
- text-align: right !important;
-}
-.text-justify{
-    text-align: justify !important;
-}
-.diskripsi{
-    text-align: justify;
-}
-
-.loading{
-width: 100px;
-  height: 100px;
-  font-size: 2rem;
-  position: absolute;
-  left: 30%;
-  top: 30%;
-}
-@media only screen and (max-width: 600px){
-    .diskripsi{
-        max-height: 150px;
-        overflow: auto;
-    }
-}
-/* #result div{
-    min-height: 300px;
-} */
-
-#menu{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 5px;
-    /* background-color: blue; */
-    z-index: 9999;
-    border-top: 1px solid #6c757d;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    height: 50px;
-    color: #57595b !important;
-    background-color: #fff;
-}
-.btn-menu{
-    border: 1px solid #57595b;
-    width: 80px;
-    height: 40px;
-}
-.btn-menu:hover, .btn-menu:active{
-    border: 1px solid #1a1d20;
-}
-.btn-menu[data-menu="displayHomePage"]{
-    height: 80px;
-    margin: 0px 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#main i{
     font-size: 2rem;
-    border-radius: 50%;
-    background-color: #fff;
+    align-self: center;
+    margin: auto;
 }
-.btn-menu[data-menu="displayHistory"]{
-    text-align: right;
+.list-group-item,
+.setting-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
 }
-.btn-menu[data-menu="dark-mode"],
-.btn-menu[data-menu="white-mode"]{
-    text-align: left;
-}
-body[data-bs-theme="dark"] #menu,
-body[data-bs-theme="dark"] #search,
-body[data-bs-theme="dark"] .btn-menu[data-menu="displayHomePage"]{
-  background-color: #1a1d20;
-  color: #fff;
-}
-
-body[data-bs-theme="dark"] .btn-menu{
-    border: 1px solid #57595b;
-}
-body[data-bs-theme="dark"] .btn-menu:hover,
-body[data-bs-theme="dark"] .btn-menu:active{
-    color: #fff;
+.list-group-item i,
+.setting-item i{
+   font-size: 1rem !important;
 }
