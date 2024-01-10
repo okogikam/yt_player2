@@ -20,101 +20,10 @@
             <button class="btn btn-sm btn-secondary" for="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </span>        
     </div>
-    <main id="main">
+    <main id="conteiner">
         <div id="main">
-            <!-- <i class="fa-solid fa-photo-film fa-beat-fade" style="color: #eee;"></i> -->
-            <div id="trending">
-                <h4>Trending</h4>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-            <div id="video">
-                <h4>Video</h4>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-            </div>
-            <div id="channel">
-                <h4>Channel</h4>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-5">
-                            <img src="https://images.tokopedia.net/img/KRMmCm/2022/8/9/441e10a6-83b8-48ac-a357-edb866cad92b.jpg" alt="" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-7">
-                            <div class="card-body p-1">
-                                <a href="#">Title video</a>
-                                <a href="#">@channel</a>
-                                <span class="btn btn-sm">upload</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
+            <div class="loading">
+                <i class="fa-solid fa-photo-film fa-beat-fade" style="color: #eee;"></i>        
             </div>
         </div>
         <nav id="menu">
@@ -145,7 +54,15 @@
     
     <!-- yt_search  -->
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./js/video.js"></script>
     <script src="./js/yt_api.js"></script>
-    
+
+    <script src="./js/homePage.js"></script>
+    <script>
+        let yt_api = new homePage({
+            element: document.querySelector("#main")
+        });
+        yt_api.display();
+    </script>
 </body>
 </html>

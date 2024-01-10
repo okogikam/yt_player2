@@ -1,110 +1,46 @@
 class homePage{
     constructor(conf){
-        this.url = conf.url;
+        this.url = "https://api.hancau.net/v2/?type=homepage";
         this.element = conf.element;
-        this.player = conf.player;
-        this.Ytvideo = conf.Ytvideo;
+        this.loaded = false;
     }
-    videos(data){
-        let videoList = this.element.querySelector("#videoList");
-        let daftarVideos = document.createElement("div");
-        daftarVideos.classList.add("row");
-        daftarVideos.innerHTML = "<h3>Video</h3>";
-        data.forEach(vid => {
-            let btn = document.createElement("div");
-            let durasi = "";
-            btn.setAttribute("class","col-12 col-sm-6 col-md-4");
-            btn.innerHTML = `
-            <div class="card m-2" title="${vid.title.runs[0].text}">
-                <div class="card-header p-0 m-0">
-                    <img src="${vid.thumbnail.thumbnails[0].url}" alt="">
-                </div>
-                <div class="card-body">
-                    <p class="title">${vid.title.runs[0].text.slice(0,30)}</p>
-                    <p class="channel">
-                    <img src="${vid.channelThumbnailSupportedRenderers.channelThumbnailWithLinkRenderer.thumbnail.thumbnails[0].url}" width="30" height="30">
-                    ${vid.ownerText.runs[0].text}
-                    <span class="durasi">${durasi}</span>
-                    </p>
-                </div>
-            </div>`;
-            daftarVideos.appendChild(btn);
-            btn.querySelector(".card").addEventListener("click",()=>{
-                videoList.innerHTML = "";
-                this.player.init({
-                    type: "playVideo",
-                    videoId: vid.videoId
-                })
-                this.Ytvideo.saveHistory({
-                    videoId: vid.videoId,
-                    title: vid.title.runs[0].text,
-                    thumbnail: vid.thumbnail.thumbnails[0].url,
-                    channel: vid.ownerText.runs[0].text
-                })
-                this.Ytvideo.displayViewPage(vid.videoId);
-            })   
-        }); 
-        videoList.appendChild(daftarVideos);    
+    async load(){
+        let data = await fetch(`${this.url}`);
+        this.dataJson = await data.json();
+        this.loaded = true;        
+    }
+    displayVideo(){
+        let video = this.dataJson.videos;
+        let divT = document.createElement("div");
+        divT.innerHTML = "<h4>Video</h4>";
+        divT.setAttribute("id","video");
+        Object.values(video).forEach(v=>{
+            let videoT = new Video(v);
+            divT.appendChild(videoT.display());
+        })
+        this.element.appendChild(divT);
     }
     Shorts(){
 
     }
-    Trending(data){
-        let videoList = this.element.querySelector("#videoList");
-        let daftarVideo = document.createElement("div");
-        daftarVideo.classList.add("row");
-        daftarVideo.innerHTML = "<h3>Trending</h3>";
-        data.forEach(vid => {
-            let btn = document.createElement("div");
-            let durasi = "";
-            btn.setAttribute("class","col-12 col-sm-6 col-md-4");
-            btn.innerHTML = `
-            <div class="card m-2" title="${vid.title.runs[0].text}">
-                <div class="card-header p-0 m-0">
-                    <img src="${vid.thumbnail.thumbnails[0].url}" alt="">
-                </div>
-                <div class="card-body">
-                    <p class="title">${vid.title.runs[0].text.slice(0,30)}</p>
-                    <p class="channel">
-                    <img src="${vid.channelThumbnailSupportedRenderers.channelThumbnailWithLinkRenderer.thumbnail.thumbnails[0].url}" width="30" height="30">
-                    ${vid.ownerText.runs[0].text}
-                    <span class="durasi">${durasi}</span>
-                    </p>
-                </div>
-            </div>`;
-            daftarVideo.appendChild(btn);
-            btn.querySelector(".card").addEventListener("click",()=>{
-                videoList.innerHTML = "";
-                this.player.init({
-                    type: "playVideo",
-                    videoId: vid.videoId
-                })
-                this.Ytvideo.saveHistory({
-                    videoId: vid.videoId,
-                    title: vid.title.runs[0].text,
-                    thumbnail: vid.thumbnail.thumbnails[0].url,
-                    channel: vid.ownerText.runs[0].text
-                })
-                this.Ytvideo.displayViewPage(vid.videoId);
-            })   
-        }); 
-        videoList.appendChild(daftarVideo);
+    displayTrending(){
+        let trending = this.dataJson.Trending;
+        let divT = document.createElement("div");
+        divT.innerHTML = "<h4>Trending</h4>";
+        divT.setAttribute("id","trending");
+        Object.values(trending).forEach(v=>{
+            let videoT = new Video(v);
+            divT.appendChild(videoT.display());
+        })
+        this.element.appendChild(divT);
     }
     async display(){
-        this.Ytvideo.loadingView();
-        let a = document.getElementById("videoPlaying");
-        let b = document.getElementById("videoLists");
-        a.classList.add("d-none");      
-        b.setAttribute("class","col-auto");
-        let data = await fetch(`${this.url}?type=homepage`);
-        let dataJson = await data.json();
-        let c = this.Ytvideo.element.querySelector("#videoList");
-        c.innerHTML = "";
-        this.Trending(dataJson.Trending);
-        this.videos(dataJson.videos);
+        await this.load();
 
-        // Object.keys(dataJson).forEach(key=>{
-        //     this[`${key}`](dataJson[key]);
-        // })
+        if(this.loaded){
+            this.element.innerHTML = ``;  
+            this.displayTrending();   
+            this.displayVideo();                 
+        }
     }
 }
