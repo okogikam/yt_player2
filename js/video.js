@@ -17,13 +17,13 @@ class Video{
         <div class="card mb-3" title="${this.title}">
             <div class="row g-0">
                 <div class="col-5">
-                    <a href="../view/?id=${this.id}">
+                    <a href="./view/?id=${this.id}">
                      <img src="${this.img}" alt="" class="img-fluid rounded-start">
                      </a>
                 </div>
                 <div class="col-7">
                     <div class="card-body p-1">
-                        <a class="video-title" href="../view/?id=${this.id}">${this.title}</a>
+                        <a class="video-title" href="./view/?id=${this.id}">${this.title}</a>
                         <a class="chanel-title" href="#">
                         <img src="${this.chanImg}" class="chanel-img">${this.chanel}
                         </a>
