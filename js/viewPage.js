@@ -15,7 +15,7 @@ class viewPage{
         div.classList.add("frameVideo");
         div.innerHTML = `
         <iframe id="player" type="text/html"
-  src="http://www.youtube.com/embed/${this.vidId}?enablejsapi=1&autoplay=1"
+  src="http://www.youtube.com/embed/${this.vidId}?enablejsapi=1&autoplay=1&origin=https://okogikam.github.io/yt_player2/"
   frameborder="0"></iframe>`
 
         this.element.appendChild(div);
