@@ -1,13 +1,14 @@
 class Video{
     constructor(conf){
         // this.v = conf;
-        this.title = conf.title.runs[0].text || "";
+        this.origin = "https://okogikam.github.io/yt_player2/";
+        this.title = conf.title.accessibility.accessibilityData.label || "";
         this.id = conf.videoId;
         this.img = conf.thumbnail.thumbnails[0].url || "";
-        this.chanel = conf.ownerText.runs[0].text || "";
+        this.chanel = conf.longBylineText.runs[0].text || "";
         this.uploaded = conf.publishedTimeText.simpleText || "";
         this.duration = conf.lengthText.simpleText || "";
-        this.chanImg = conf.channelThumbnailSupportedRenderers.channelThumbnailWithLinkRenderer.thumbnail.thumbnails[0].url || "";
+        this.chanImg = "";
     }
 
     display(){
@@ -17,13 +18,13 @@ class Video{
         <div class="card mb-3" title="${this.title}">
             <div class="row g-0">
                 <div class="col-5">
-                    <a href="./view/?id=${this.id}">
+                    <a href="${this.origin}/view/?id=${this.id}">
                      <img src="${this.img}" alt="" class="img-fluid rounded-start">
                      </a>
                 </div>
                 <div class="col-7">
                     <div class="card-body p-1">
-                        <a class="video-title" href="./view/?id=${this.id}">${this.title}</a>
+                        <a class="video-title" href="${this.origin}/view/?id=${this.id}">${this.title}</a>
                         <a class="chanel-title" href="#">
                         <img src="${this.chanImg}" class="chanel-img">${this.chanel}
                         </a>
